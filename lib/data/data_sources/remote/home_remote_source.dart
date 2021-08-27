@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:tax_task/data/data_sources/remote/response_handler.dart';
 import 'package:tax_task/data/data_sources/remote/server_error.dart';
 import 'package:tax_task/data/model/response/categories_response.dart';
+import 'package:tax_task/data/model/response/popular_response.dart';
 import 'package:tax_task/data/model/response/products_response.dart';
 import 'package:tax_task/data/model/response/register_response.dart';
 import 'package:tax_task/data/model/request/register_request.dart';
@@ -49,6 +50,19 @@ class HomeRemoteSource {
     CategoriesResponse response;
     try {
       response = await _apiClient!.getCategories(page, size, token);
+    } catch (error, stacktrace) {
+      print("Exception occurred: $error stacktrace: $stacktrace");
+      return ResponseHandler()
+        ..setException(ServerError.withError(error: error as DioError));
+    }
+    return ResponseHandler()..data = response;
+  }
+
+  Future<ResponseHandler<PopularResponse>> getPopularProducts(
+      {required String token}) async {
+    PopularResponse response;
+    try {
+      response = await _apiClient!.getPopularProducts(token);
     } catch (error, stacktrace) {
       print("Exception occurred: $error stacktrace: $stacktrace");
       return ResponseHandler()

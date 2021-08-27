@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 project(runner LANGUAGES CXX)
 
-set(BINARY_NAME "tax_task")
-set(APPLICATION_ID "com.donaboyev.tax_task")
+set(BINARY_NAME "Tax App")
+set(APPLICATION_ID "com.donaboyev.taxapp")
 
 cmake_policy(SET CMP0063 NEW)
 

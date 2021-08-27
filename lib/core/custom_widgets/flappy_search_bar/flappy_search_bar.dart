@@ -220,7 +220,7 @@ class SearchBar<T> extends StatefulWidget {
     required this.onItemFound,
     this.fromMap = false,
     this.searchBarController,
-    this.minimumChars = 3,
+    this.minimumChars = 1,
     this.debounceDuration = const Duration(milliseconds: 500),
     this.loader = const Center(child: CircularProgressIndicator()),
     this.onError,
@@ -393,7 +393,7 @@ class _SearchBarState<T> extends State<SearchBar<T>>
             children: <Widget>[
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: clrWhite,
                   border: Border(
                     bottom: BorderSide(color: clrInactive, width: 1),
                   ),

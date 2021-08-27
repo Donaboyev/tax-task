@@ -24,3 +24,9 @@ const stySearchItemCategory = TextStyle(
   fontSize: 15,
   fontWeight: FontWeight.w400,
 );
+
+const styCategoryTitle = TextStyle(
+  color: clrBlack,
+  fontSize: 18,
+  fontWeight: FontWeight.w600,
+);

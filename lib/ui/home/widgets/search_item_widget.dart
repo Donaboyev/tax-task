@@ -14,7 +14,7 @@ class SearchItemWidget extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height: 102,
+          height: 108,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,10 +49,7 @@ class SearchItemWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(left: 72),
-                child: Divider(height: 1),
-              ),
+              const Divider(height: 1),
             ],
           ),
         ),
@@ -61,7 +58,7 @@ class SearchItemWidget extends StatelessWidget {
           child: InkWell(
             onTap: onTap,
             child: Ink(
-              height: 102,
+              height: 108,
               child: Center(),
             ),
           ),

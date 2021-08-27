@@ -3,10 +3,11 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:retrofit/http.dart';
 import 'package:tax_task/core/constants/app_constants.dart';
+import 'package:tax_task/data/model/request/register_request.dart';
 import 'package:tax_task/data/model/response/categories_response.dart';
+import 'package:tax_task/data/model/response/popular_response.dart';
 import 'package:tax_task/data/model/response/products_response.dart';
 import 'package:tax_task/data/model/response/register_response.dart';
-import 'package:tax_task/data/model/request/register_request.dart';
 
 part 'api_client.g.dart';
 
@@ -61,6 +62,11 @@ abstract class ApiClient {
   Future<CategoriesResponse> getCategories(
     @Query('page') int page,
     @Query('size') int size,
+    @Header('Authorization') String token,
+  );
+
+  @GET('mxik/popular')
+  Future<PopularResponse> getPopularProducts(
     @Header('Authorization') String token,
   );
 }

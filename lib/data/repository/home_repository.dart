@@ -50,4 +50,13 @@ class HomeRepository extends BaseRepository {
       return await getErrorMessage(response.getException().getErrorMessage());
     }
   }
+
+  Future<dynamic> getPopularProducts({required String token}) async {
+    final response = await remoteSource!.getPopularProducts(token: token);
+    if (response.data != null) {
+      return response.data;
+    } else if (response.getException().getErrorMessage() != "Canceled") {
+      return await getErrorMessage(response.getException().getErrorMessage());
+    }
+  }
 }

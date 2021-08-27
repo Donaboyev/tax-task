@@ -1,7 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.donaboyev.tax_task">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    
    <application
-        android:label="tax_task"
+        android:label="Tax App"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
