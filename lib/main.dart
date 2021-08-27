@@ -1,35 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:tax_task/binding/home_binding.dart';
+import 'package:tax_task/core/constants/app_constants.dart';
+import 'package:tax_task/data/network/api_client.dart';
+import 'package:tax_task/routes/app_pages.dart';
+import 'package:tax_task/routes/app_routes.dart';
+import 'package:tax_task/ui/home/home_screen.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (AppConstants.RUNNING == Version.WAIT) await HomeBinding().dependencies();
+  runApp(MyApp());
+}
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Task'),
-      ),
-      body: Center(child: Text('Hello world!')),
+      initialRoute: AppRoutes.INITIAL,
+      navigatorKey: ApiClient.alice.getNavigatorKey(),
+      getPages: AppPages.pages,
+      defaultTransition: Transition.rightToLeft,
+      home: HomePage(),
     );
   }
 }
