@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:tax_task/controller/home_controller.dart';
 import 'package:tax_task/core/theme/app_colors.dart';
 import 'package:tax_task/core/theme/app_text_styles.dart';
+import 'package:tax_task/routes/app_routes.dart';
 import 'package:tax_task/ui/home/widgets/category_item_widget.dart';
 
 class CategoriesWidget extends StatelessWidget {
@@ -23,7 +24,9 @@ class CategoriesWidget extends StatelessWidget {
                   children: [
                     const Text('Categories', style: styCategoryTitle),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(AppRoutes.MORE_CATEGORIES);
+                      },
                       child: Row(
                         children: [
                           const Text('More', style: stySearchItemCategory),

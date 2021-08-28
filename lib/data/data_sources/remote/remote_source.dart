@@ -8,10 +8,10 @@ import 'package:tax_task/data/model/response/register_response.dart';
 import 'package:tax_task/data/model/request/register_request.dart';
 import 'package:tax_task/data/network/api_client.dart';
 
-class HomeRemoteSource {
+class RemoteSource {
   ApiClient? _apiClient;
 
-  HomeRemoteSource(this._apiClient) : assert(_apiClient != null);
+  RemoteSource(this._apiClient) : assert(_apiClient != null);
 
   Future<ResponseHandler<RegisterResponse>> getToken(
       {required RegisterRequest registerRequest}) async {

@@ -19,6 +19,12 @@ const stySearchItem = TextStyle(
   fontWeight: FontWeight.w400,
 );
 
+const styMoreCategoryItem = TextStyle(
+  color: clrBlack,
+  fontSize: 14,
+  fontWeight: FontWeight.w500,
+);
+
 const stySearchItemCategory = TextStyle(
   color: clrPrimary,
   fontSize: 15,
@@ -29,4 +35,10 @@ const styCategoryTitle = TextStyle(
   color: clrBlack,
   fontSize: 18,
   fontWeight: FontWeight.w600,
+);
+
+const styMoreCategoryCreated = TextStyle(
+  color: clrBlack,
+  fontSize: 13,
+  fontWeight: FontWeight.w400,
 );

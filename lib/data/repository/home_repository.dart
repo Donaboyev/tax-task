@@ -1,9 +1,9 @@
 import 'package:tax_task/base/base_repository.dart';
-import 'package:tax_task/data/data_sources/remote/home_remote_source.dart';
+import 'package:tax_task/data/data_sources/remote/remote_source.dart';
 import 'package:tax_task/data/model/request/register_request.dart';
 
 class HomeRepository extends BaseRepository {
-  final HomeRemoteSource? remoteSource;
+  final RemoteSource? remoteSource;
 
   HomeRepository({required this.remoteSource}) : assert(remoteSource != null);
 
