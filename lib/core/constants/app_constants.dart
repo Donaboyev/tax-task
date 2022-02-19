@@ -5,7 +5,7 @@ class AppConstants {
   static const CATEGORY_SIZE = 12;
   static const VERSION = String.fromEnvironment('VERSION');
   static const Version RUNNING =
-      VERSION == 'lazy' ? Version.LAZY : Version.WAIT;
+  VERSION == 'lazy' ? Version.LAZY : Version.WAIT;
 }
 
 enum Version {

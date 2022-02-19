@@ -7,7 +7,7 @@ import 'package:tax_task/routes/app_pages.dart';
 import 'package:tax_task/routes/app_routes.dart';
 import 'package:tax_task/ui/home/home_screen.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (AppConstants.RUNNING == Version.WAIT) await HomeBinding().dependencies();
   runApp(MyApp());
